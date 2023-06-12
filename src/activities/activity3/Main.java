@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             File file = new File("src/files/activity3.txt");
-            if(!file.exists()){
+            if (!file.exists()) {
                 file.createNewFile();
             }
 
@@ -21,17 +21,18 @@ public class Main {
             int ch;
 
 
-
-            while ((ch=frOne.read())!=-1){
-                fw.write((char)ch);
+            fw.write("Contenido del fichero uno: ");
+            while ((ch = frOne.read()) != -1) {
+                fw.write((char) ch);
             }
 
-            while ((ch=frTwo.read())!=-1){
-                fw.write((char)ch);
+
+            fw.write("\nContenido del fichero dos: ");
+            while ((ch = frTwo.read()) != -1) {
+                fw.write((char) ch);
             }
 
             fw.close();
-
 
 
         } catch (IOException e) {
