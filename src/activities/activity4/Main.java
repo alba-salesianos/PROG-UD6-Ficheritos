@@ -6,10 +6,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        Table redTable = new Table("rojo",4);
-        Table blueTable = new Table("azul",3);
-
-
         int option = -1;
         Scanner keyboard = new Scanner(System.in);
 
@@ -46,7 +42,7 @@ public class Main {
                     numberOfLegs = keyboard.nextInt();
                     keyboard.nextLine();
 
-                    Table table = new Table(colour,numberOfLegs);
+                    Table table = new Table(colour, numberOfLegs);
                     tableManager.saveTable(table);
                     break;
 
@@ -66,6 +62,6 @@ public class Main {
             }
         }
 
-
+        keyboard.close();
     }
 }
