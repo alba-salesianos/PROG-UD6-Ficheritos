@@ -15,7 +15,7 @@ public class  TableManager{
         ObjectOutput objectOutput = new ObjectOutputStream(bufferedOutput);
 
         for (int i = 0; i < tableList.size() ; i++) {
-            objectOutput.writeObject(tableList.get(i).toString());
+            objectOutput.writeObject(tableList.get(i));
         }
 
         objectOutput.close();
@@ -29,12 +29,12 @@ public class  TableManager{
 
         try {
 
-            String table = (String) objectInput.readObject();
+            Table table = (Table) objectInput.readObject();
 
 
             while(true){
                 System.out.println(table);
-                table = (String) objectInput.readObject();
+                table = (Table) objectInput.readObject();
             }
         } catch (EOFException e) {
             System.out.println("Se ha llegado hasta el final del archivo.");
